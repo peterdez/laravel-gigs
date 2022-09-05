@@ -5,6 +5,7 @@ namespace App\Http\Controllers;
 use App\Http\Controllers\Controller;
 use Illuminate\Http\Request;
 use App\Models\Gig;
+use Illuminate\Support\Facades\Auth;
 
 class GigController extends Controller
 {
@@ -28,7 +29,8 @@ class GigController extends Controller
      */
     public function create()
     {
-        return view('gigs.create');
+        $userId = Auth::id();
+        return view('gigs.create', ['user_id' => $userId]);
     }
 
     /**
@@ -43,6 +45,9 @@ class GigController extends Controller
             'title' => 'required',
             'description' => 'required',
             'salary' => 'required',
+            'company_id' => 'required',
+            'role_id' => 'required',
+            'user_id' => 'required',
         ]);
 
         Gig::create($request->all());
@@ -87,7 +92,8 @@ class GigController extends Controller
             'description' => 'required',
             'salary' => 'required',
             'company_id' => 'required',
-            'user_id' => 'required'
+            'role_id' => 'required',
+            'user_id' => 'required',
         ]);
  
         $gig->update($request->all());
