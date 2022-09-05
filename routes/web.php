@@ -18,4 +18,16 @@ Route::get('/', function () {
     return view('welcome');
 });
 
+Route::get('/movie', function () {
+    return "<a href='#' class='btn'> movie </a>";
+});
+
 Route::resource('gigs', GigController::class);
+
+Auth::routes();
+
+Route::get('/home', [App\Http\Controllers\HomeController::class, 'index'])->name('home');
+
+Auth::routes();
+
+Route::get('/home', [App\Http\Controllers\HomeController::class, 'index'])->name('home');
