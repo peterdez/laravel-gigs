@@ -1,6 +1,6 @@
 <!-- create.blade.php -->
 
-@extends('layouts.gigsLayout')
+@extends('layout')
 
 @section('content')
 <h1 class="h2 p-4 border-bottom">Gigs</h1>
@@ -32,8 +32,8 @@
             <form action="{{route('gigs.store')}}" method="POST" class="row g-3">
             @csrf
                 <div class="col-md-6">
+                <input type="text" name="user_id" class="form-control" id="exampleFormCut1" placeholder="user id">
                 <input type="text" name="title" class="form-control" id="exampleFormControlInput1" placeholder="title">
-                <input type="text" name="user_id" class="form-control" id="exampleForrolInput1" value="{{$user}}">
                 @error('title')
                   <div class="alert alert-danger mt-1 mb-1">{{ $message }}</div>
                @enderror

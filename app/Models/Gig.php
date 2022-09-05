@@ -8,4 +8,14 @@ use Illuminate\Database\Eloquent\Model;
 class Gig extends Model
 {
     use HasFactory;
+
+    protected $fillable = [
+        'title',
+        'description',
+        'salary',
+        /*'company_id',
+        'role_id',
+        'user_id',
+        'created_at'*/
+    ];
 }

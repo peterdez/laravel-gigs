@@ -1,6 +1,6 @@
 <!-- create.blade.php -->
 
-@extends('layouts.gigsLayout')
+@extends('layout')
 
 @section('content')
 <h1 class="h2 p-4 border-bottom">Gigs</h1>
@@ -28,7 +28,7 @@
                     @csrf
                 @method('PUT')
                 <div class="col-md-6">
-                <input type="text" name="user_id" class="form-control" id="exampleForrolInput1" value="{{$user_id}}">
+                
                 <input type="text" name="title" class="form-control" id="exampleFormControlInput1" placeholder="title" value="{{$gig->title}}">
                 <input type="text" name="salary" class="form-control" id="exampleFormControlIn" placeholder="salary" value="{{$gig->salary}}">
                 <textarea name="description" class="form-control" id="exampleFormControlTe" rows="3">{{$gig->description}}</textarea>

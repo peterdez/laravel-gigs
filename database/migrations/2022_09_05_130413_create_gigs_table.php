@@ -18,9 +18,9 @@ class CreateGigsTable extends Migration
             $table->string('title');
             $table->text('description');
             $table->string('salary');
-            $table->foreignId('company_id');
-            $table->foreignId('role_id');
-            $table->foreignId('user_id');
+            $table->foreignId('company_id')->nullable();
+            $table->foreignId('role_id')->nullable();
+            $table->foreignId('user_id')->nullable();
             $table->timestamps();
         });
     }

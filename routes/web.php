@@ -1,7 +1,7 @@
 <?php
 
 use Illuminate\Support\Facades\Route;
-use App\Http\Controllers\PhotoController;
+use App\Http\Controllers\GigController;
 
 /*
 |--------------------------------------------------------------------------
@@ -16,10 +16,6 @@ use App\Http\Controllers\PhotoController;
 
 Route::get('/', function () {
     return view('welcome');
-});
-
-Route::get('/movie', function () {
-    return "<a href='#' class='btn'> movie </a>";
 });
 
 Route::resource('gigs', GigController::class);

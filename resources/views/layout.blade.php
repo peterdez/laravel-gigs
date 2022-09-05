@@ -9,7 +9,7 @@
   <title>Laravel 8 CRUD Tutorial</title>
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
   <link href="{{ asset('css/app.css') }}" rel="stylesheet" type="text/css" />
-  <link href="{{ asset('css/dashboard.css') }}" rel="stylesheet" type="text/css" />
+  <link href="{{ asset('css/gigs-dashboard.css') }}" rel="stylesheet" type="text/css" />
   <style>
         body {
           background-color: #fbfbff;

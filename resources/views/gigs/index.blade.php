@@ -1,6 +1,6 @@
 <!-- index.blade.php -->
 
-@extends('layouts.gigsLayout')
+@extends('layout')
 
 @section('content')
       <h1 class="h2 p-4 border-bottom">Gigs</h1>

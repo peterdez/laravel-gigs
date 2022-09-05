@@ -2,7 +2,9 @@
 
 namespace App\Http\Controllers;
 
+use App\Http\Controllers\Controller;
 use Illuminate\Http\Request;
+use App\Models\Gig;
 
 class GigController extends Controller
 {
@@ -13,7 +15,10 @@ class GigController extends Controller
      */
     public function index()
     {
-        //
+        $gigs = Gig::latest()->paginate(5);
+
+        return view('gigs.index', compact('gigs'))
+            ->with('i', (request()->input('page', 1) - 1) * 5);
     }
 
     /**
@@ -23,7 +28,7 @@ class GigController extends Controller
      */
     public function create()
     {
-        //
+        return view('gigs.create');
     }
 
     /**
@@ -34,7 +39,16 @@ class GigController extends Controller
      */
     public function store(Request $request)
     {
-        //
+        $request->validate([
+            'title' => 'required',
+            'description' => 'required',
+            'salary' => 'required',
+        ]);
+
+        Gig::create($request->all());
+
+        return redirect()->route('gigs.index')
+            ->with('success', 'Gig created successfully.');
     }
 
     /**
@@ -43,9 +57,9 @@ class GigController extends Controller
      * @param  int  $id
      * @return \Illuminate\Http\Response
      */
-    public function show($id)
+    public function show(Gig $gig)
     {
-        //
+        return view('gigs.show',compact('gig'));
     }
 
     /**
@@ -54,9 +68,9 @@ class GigController extends Controller
      * @param  int  $id
      * @return \Illuminate\Http\Response
      */
-    public function edit($id)
+    public function edit(Gig $gig)
     {
-        //
+        return view('gigs.edit',compact('gig'));
     }
 
     /**
@@ -66,9 +80,20 @@ class GigController extends Controller
      * @param  int  $id
      * @return \Illuminate\Http\Response
      */
-    public function update(Request $request, $id)
+    public function update(Request $request, Gig $gig)
     {
-        //
+        $request->validate([
+            'title' => 'required',
+            'description' => 'required',
+            'salary' => 'required',
+            'company_id' => 'required',
+            'user_id' => 'required'
+        ]);
+ 
+        $gig->update($request->all());
+     
+        return redirect()->route('gigs.index')
+                        ->with('success','Gig Has Been updated successfully');
     }
 
     /**
@@ -77,8 +102,11 @@ class GigController extends Controller
      * @param  int  $id
      * @return \Illuminate\Http\Response
      */
-    public function destroy($id)
+    public function destroy(Gig $gig)
     {
-        //
+        $gig->delete();
+     
+        return redirect()->route('gigs.index')
+                        ->with('success','Gig has been deleted successfully');
     }
 }
