@@ -28,16 +28,15 @@
                     @csrf
                 @method('PUT')
                 <div class="col-md-6">
-                
+                <input type="text" name="user_id" class="form-control" id="exampleForrolInput1" value="{{$user_id}}">
                 <input type="text" name="title" class="form-control" id="exampleFormControlInput1" placeholder="title" value="{{$gig->title}}">
                 <input type="text" name="salary" class="form-control" id="exampleFormControlIn" placeholder="salary" value="{{$gig->salary}}">
                 <textarea name="description" class="form-control" id="exampleFormControlTe" rows="3">{{$gig->description}}</textarea>
                 <select class="form-select" name="company_id" aria-label="Default select example">
-                <option>Open this select menu</option>
-                <option value="{{$gig->company_id}}" selected>{{$gig->company_id}}</option>
-                <option value="1">One</option>
-                <option value="2">Two</option>
-                <option value="3">Three</option>
+                @foreach($companies as $company)
+        
+                <option value="{{$company->id}}" <?php echo ($gig->company_id == $company->id) ? 'selected' : ''; ?>>{{$company->name}}</option>
+                @endforeach
               </select>
               <select class="form-select" name="role_id" aria-label="Default select example">
                 <option selected>Open this select menu</option>

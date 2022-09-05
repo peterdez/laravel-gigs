@@ -6,7 +6,7 @@
       <h1 class="h2 p-4 border-bottom">Gigs</h1>
       <a href="{{route('gigs.create')}}" class="btn btn-primary">Create Gig</a>
       <nav class="nav nav-pills nav-pills-index nav-justified">
-        <a class="nav-link active rounded-0 text-start" aria-current="page" href="#">All Gigs <span class="badge bg-secondary">425</span></a>
+        <a class="nav-link active rounded-0 text-start" aria-current="page" href="#">All Gigs <span class="badge bg-secondary">{{$gig_count}}</span></a>
         <a class="nav-link rounded-0" href="#">My Gigs <span class="badge bg-secondary">32</span></a>
         <a class="nav-link rounded-0" href="#">Rejected Gigs <span class="badge bg-secondary">25</span></a>
       </nav>
@@ -53,7 +53,8 @@
         <table class="table table-striped table-sm">
           <thead>
             <tr>
-              <th scope="col">#</th>
+              <th scope="col"></th>
+              <th scope="col">Company</th>
               <th scope="col">Header</th>
               <th scope="col">Header</th>
               <th scope="col">Header</th>
@@ -63,7 +64,16 @@
           <tbody>
         @foreach($gigs as $gig)
         <tr>
-            <td>{{$gig->id}}</td>
+            <td>
+            <div class="form-check">
+              <input class="form-check-input" type="checkbox" value="" id="flexCheckDefault">
+            </div>
+            </td>
+            <td>
+            @isset ($gig->company->name) 
+                    {{ $gig->company->name }}
+                    @endisset
+            </td>
             <td>{{$gig->title}}</td>
             <td>{{$gig->salary}}</td>
             <td><a href="{{ route('gigs.edit', $gig->id)}}" class="btn btn-primary">Edit</a></td>
@@ -78,5 +88,6 @@
         @endforeach
     </tbody>
         </table>
+        {!! $gigs->links() !!}
       </div>
   @endsection

@@ -5,6 +5,7 @@ namespace App\Http\Controllers;
 use App\Http\Controllers\Controller;
 use Illuminate\Http\Request;
 use App\Models\Gig;
+use App\Models\Company;
 use Illuminate\Support\Facades\Auth;
 
 class GigController extends Controller
@@ -17,8 +18,8 @@ class GigController extends Controller
     public function index()
     {
         $gigs = Gig::latest()->paginate(5);
-
-        return view('gigs.index', compact('gigs'))
+        $gig_count = Gig::count();
+        return view('gigs.index', compact('gigs', 'gig_count'))
             ->with('i', (request()->input('page', 1) - 1) * 5);
     }
 
@@ -75,7 +76,12 @@ class GigController extends Controller
      */
     public function edit(Gig $gig)
     {
-        return view('gigs.edit',compact('gig'));
+        if (Auth::check())
+        {
+        $user_id = Auth::id();
+        }
+        $companies = Company::all();
+        return view('gigs.edit',compact('gig', 'user_id', 'companies'));
     }
 
     /**

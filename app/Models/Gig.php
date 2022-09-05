@@ -18,4 +18,12 @@ class Gig extends Model
         'user_id',
         /*'created_at'*/
     ];
+
+    /**
+     * Get the company that owns the gig.
+     */
+    public function company()
+    {
+        return $this->belongsTo(Company::class);
+    }
 }
