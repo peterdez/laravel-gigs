@@ -35,7 +35,7 @@
                 <select class="form-select" name="company_id" aria-label="Default select example">
                 @foreach($companies as $company)
         
-                <option value="{{$company->id}}" <?php echo ($gig->company_id == $company->id) ? 'selected' : ''; ?>>{{$company->name}}</option>
+                <option value="{{$company->id}}" {{ ($gig->company_id == $company->id) ? 'selected' : ''; }}>{{$company->name}}</option>
                 @endforeach
               </select>
               <select class="form-select" name="role_id" aria-label="Default select example">

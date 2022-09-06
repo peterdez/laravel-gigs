@@ -11,6 +11,16 @@ use Illuminate\Support\Facades\Auth;
 class GigController extends Controller
 {
     /**
+     * Create a new controller instance.
+     *
+     * @return void
+     */
+    public function __construct()
+    {
+        $this->middleware('auth')->except('index');
+    }
+
+    /**
      * Display a listing of the resource.
      *
      * @return \Illuminate\Http\Response
@@ -93,6 +103,8 @@ class GigController extends Controller
      */
     public function update(Request $request, Gig $gig)
     {
+        $this->authorize('update', $gig);
+
         $request->validate([
             'title' => 'required',
             'description' => 'required',
@@ -116,6 +128,7 @@ class GigController extends Controller
      */
     public function destroy(Gig $gig)
     {
+        $this->authorize('update', $gig);
         $gig->delete();
      
         return redirect()->route('gigs.index')
