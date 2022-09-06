@@ -14,6 +14,24 @@
         body {
           background-color: #fbfbff;
         }
+        .table {
+            border-collapse: separate;
+            border-spacing:0 10px;
+        }
+        th {
+          border-bottom-width: 0 !important;
+        }
+        td:first-child,
+        th:first-child {
+          border-radius: 10px 0 0 10px;
+          padding-left: 20px;
+        }
+
+        td:last-child,
+        th:last-child {
+          border-radius: 0 10px 10px 0;
+          padding-right: 20px;
+        }
         .navbar-brand {
             background-color: transparent !important;
             box-shadow: none !important;
@@ -153,6 +171,26 @@
       <input class="form-control form-control-dark w-50 top-search rounded border" type="text" placeholder="Search" aria-label="Search">
       <div class="navbar-nav pt-4 pt-md-0">
         <ul class="nav d-flex justify-content-between">
+        @auth
+          <li class="nav-item">
+          <a class="nav-link p-0 my-2 mx-4" href="{{ route('logout') }}" onclick="event.preventDefault();
+                            document.getElementById('logout-form').submit();">
+              {{ __('Logout') }}
+          <form id="logout-form" action="{{ route('logout') }}" method="POST" class="d-none">
+              @csrf
+          </form>
+        </a>
+        </li>
+           @else
+            <li class="nav-item">
+            <a class="nav-link p-0 my-2 mx-4" href="{{ route('login') }}">Log in
+          </a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link p-0 my-2 mx-4" href="{{ route('register') }}">Register
+          </a>
+          </li>
+          @endauth 
           <li class="nav-item">
             <a class="nav-link p-0 my-2 mx-4 position-relative" href="#">
               <i class="fa fa-bell-o" class="align-text-bottom"></i>
@@ -170,7 +208,8 @@
             <a class="nav-link p-0 my-2 mx-4" href="#">
             <i class="fa fa-cog" class="align-text-bottom"></i>
           </a>
-          </li>
+          </li>  
+          
           <li class="nav-item">
             <a class="nav-link p-0 my-2 mx-4" href="#">
             <img class="img-profile rounded-circle" src="{{ asset('img/profile-pic.jpg') }}" width="25">

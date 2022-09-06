@@ -53,7 +53,7 @@ class GigPolicy
      */
     public function update(User $user, Gig $gig)
     {
-        return $user->id === $gig->user_id;
+        return $user->is_admin === 1;
     }
 
     /**
@@ -65,7 +65,7 @@ class GigPolicy
      */
     public function delete(User $user, Gig $gig)
     {
-        return $user->id === $gig->user_id;
+        return $user->is_admin === 1;
     }
 
     /**

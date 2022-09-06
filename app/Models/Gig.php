@@ -26,4 +26,17 @@ class Gig extends Model
     {
         return $this->belongsTo(Company::class);
     }
+
+    /**
+     * Get the role that owns the gig.
+     */
+    public function role()
+    {
+        return $this->belongsTo(Role::class);
+    }
+
+    public function getCreatedAtFormattedAttribute()
+    {
+    return $this->created_at->format('jS, F Y');
+    }
 }

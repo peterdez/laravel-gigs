@@ -6,6 +6,7 @@ use App\Http\Controllers\Controller;
 use Illuminate\Http\Request;
 use App\Models\Gig;
 use App\Models\Company;
+use App\Models\Role;
 use Illuminate\Support\Facades\Auth;
 
 class GigController extends Controller
@@ -31,7 +32,17 @@ class GigController extends Controller
         $gig_count = Gig::count();
         return view('gigs.index', compact('gigs', 'gig_count'))
             ->with('i', (request()->input('page', 1) - 1) * 5);
+        
     }
+
+    /*public function indexcat($cat)
+    {
+        $gigs = Gig::where('title', $cat)->paginate(5);
+        $gig_count = Gig::count();
+        return view('gigs.index', compact('gigs', 'gig_count'))
+            ->with('i', (request()->input('page', 1) - 1) * 5);
+    }*/
+
 
     /**
      * Show the form for creating a new resource.
@@ -40,8 +51,10 @@ class GigController extends Controller
      */
     public function create()
     {
-        $userId = Auth::id();
-        return view('gigs.create', ['user_id' => $userId]);
+        $user_id = Auth::id();
+        $companies = Company::all();
+        $roles = Role::all();
+        return view('gigs.create', compact('user_id', 'companies', 'roles'));
     }
 
     /**

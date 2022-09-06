@@ -41,21 +41,21 @@
                 @error('salary')
                   <div class="alert alert-danger mt-1 mb-1">{{ $message }}</div>
                @enderror
-                <textarea name="description" class="form-control" id="exampleFormControlTe" rows="3"></textarea>
+                <textarea name="description" class="form-control" id="exampleFormControlTe" rows="3" placeholder="Describe..."></textarea>
                 @error('description')
                   <div class="alert alert-danger mt-1 mb-1">{{ $message }}</div>
                @enderror
                <select class="form-select" name="company_id" aria-label="Default select example">
-                <option selected>Open this select menu</option>
-                <option value="1">One</option>
-                <option value="2">Two</option>
-                <option value="3">Three</option>
+                <option selected>Select company</option>
+                @foreach($companies as $company)
+                <option value="{{$company->id}}">{{$company->name}}</option>
+                @endforeach
               </select>
               <select class="form-select" name="role_id" aria-label="Default select example">
-                <option selected>Open this select menu</option>
-                <option value="1">One</option>
-                <option value="2">Two</option>
-                <option value="3">Three</option>
+                <option selected>Select Role</option>
+                  @foreach($roles as $role)
+                <option value="{{$role->id}}">{{$role->title}}</option>
+                @endforeach
               </select>
                 </div>
                 <div class="col-md-6">
