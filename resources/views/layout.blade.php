@@ -22,7 +22,10 @@
       <button class="navbar-toggler position-absolute d-md-none collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#sidebarMenu" aria-controls="sidebarMenu" aria-expanded="false" aria-label="Toggle navigation">
         <span class="navbar-toggler-icon"></span>
       </button>
-      <input class="form-control form-control-dark w-50 top-search rounded border" type="text" placeholder="Search" aria-label="Search">
+      <div class="input-group w-50 top-search">
+        <span class="input-group-text" id="basic-addon1"><i class="fa fa-search"></i></span>
+        <input type="text" class="form-control" placeholder="Search" aria-label="Username" aria-describedby="search">
+      </div>
       <div class="navbar-nav pt-4 pt-md-0">
         <ul class="nav d-flex justify-content-between">
         @auth

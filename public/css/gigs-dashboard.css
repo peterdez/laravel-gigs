@@ -177,6 +177,18 @@ color: #a9b0c5;
     border-color: #fbb30b;
     background-color: #fbb30b !important;
   }
+
+  .top-search .form-control {
+    background-color: transparent;
+    padding: 0.5rem 1rem !important;
+    border-left: 0;
+  }
+
+  .top-search .input-group-text {
+    background-color: transparent;
+    padding-right: 0;
+    border-right: 0;
+  }
   
   .feather {
     width: 16px;
