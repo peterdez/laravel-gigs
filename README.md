@@ -2,13 +2,6 @@
 
 Web application for managing gigs built with Laravel:
 
-### Database tables:
-
-- Users.
-- Gigs.
-- Companies.
-- Roles.
-
 ## Project Setup
 
 1. Clone this repo
