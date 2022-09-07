@@ -20,4 +20,4 @@ Web application for managing gigs built with Laravel:
 - npm install && npm run dev
 8. Run server
 - php artisan serve
-9. Visit localhost:8000/gigs in your favorite browser
+9. Visit **localhost:8000/gigs** in your favorite browser
