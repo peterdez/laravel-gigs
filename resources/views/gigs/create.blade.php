@@ -8,7 +8,7 @@
 <form action="{{route('gigs.store')}}" method="POST" id="add_gig_form" class="row g-3">
   @csrf
   <div class="d-md-flex align-items-start px-3">
-    <div class="nav flex-column nav-pills nav-pills-inner p-4 mb-2 mx-5 w-25 bg-white shadow rounded" id="v-pills-tab" role="tablist" aria-orientation="vertical">
+    <div class="nav flex-column nav-pills nav-pills-inner p-4 mb-2 mx-5 w-25 bg-white shadow-lg rounded" id="v-pills-tab" role="tablist" aria-orientation="vertical">
       <button class="nav-link active text-start" id="v-pills-basic-tab" data-bs-toggle="pill" data-bs-target="#v-pills-basic" type="button" role="tab" aria-controls="v-pills-basic" aria-selected="true">Basic Data</button>
       <button class="nav-link text-start" id="v-pills-remuneration-tab" data-bs-toggle="pill" data-bs-target="#v-pills-remuneration" type="button" role="tab" aria-controls="v-pills-remuneration" aria-selected="false">Remuneration</button>
     </div>
@@ -17,7 +17,7 @@
       {{ session('status') }}
     </div>
     @endif
-    <div class="tab-content w-50  bg-white shadow rounded p-4 border" id="v-pills-tabContent">
+    <div class="tab-content w-50  bg-white shadow-lg rounded p-4" id="v-pills-tabContent">
       <input type="hidden" name="user_id" class="form-control" id="exampleFormCut1" placeholder="user id" value={{$user_id}}>
       <div class="tab-pane fade show active" id="v-pills-basic" role="tabpanel" aria-labelledby="v-pills-basic-tab" tabindex="0">
        <div class="row g-3">
