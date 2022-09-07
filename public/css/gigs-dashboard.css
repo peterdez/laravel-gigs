@@ -71,12 +71,23 @@ color: #a7a4ae !important;
 .sidebar .nav-link.active, .sidebar .nav-link.active .feather {
 color: #fbb30b !important;
 }
-.below-pills .btn-primary {
+.btn-outline-light {
   background: none;
   border: 1px solid #cccccc;
   color: #a9b0c5;
 }
-.below-pills .btn-primary.active {
+
+.btn-outline-light:hover {
+  border: 1px solid #cccccc;
+  color: #a9b0c5;
+}
+
+.below-pills .btn-outline-secondary {
+  background: none;
+  border: 1px solid #cccccc;
+  color: #a9b0c5;
+}
+.below-pills .btn-outline-secondary.active {
   background: none;
   border: 2px solid #fbb30b;
   color: #fbb30b;

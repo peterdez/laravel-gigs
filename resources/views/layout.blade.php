@@ -15,7 +15,7 @@
 <body>
 <div class="container-fluid">
   <div class="row">
-    <div class="col-md-9 ms-sm-auto col-lg-10 px-md-4 py-4 border-bottom">
+    <div class="col-md-9 ms-sm-auto col-lg-10 pe-md-4 ps-md-5 py-4 border-bottom">
     <header class="navbar navbar-white top-bar sticky-top flex-md-nowrap p-0">
       <a class="navbar-brand col-md-3 col-lg-2 me-0 px-3 fs-6 d-md-none" href="#">
         <img id="logo" src="{{ asset('img/logo.png') }}">

@@ -16,11 +16,11 @@
     <div class="pb-3 pt-4 below-pills px-5">
         <div class="row row-cols-3 row-cols-lg-6 g-3 no-wrap">
             <div class="col">
-                <a class="btn btn-primary w-100" href="#" role="button">Freelance</a>
+                <a class="btn btn-outline-light w-100" href="#" role="button">Freelance</a>
             </div>
             <div class="col">
                 <div class="dropdown">
-                  <button class="btn btn-primary dropdown-toggle w-100" type="button" data-bs-toggle="dropdown" aria-expanded="false">
+                  <button class="btn btn-outline-light dropdown-toggle w-100" type="button" data-bs-toggle="dropdown" aria-expanded="false">
                     Keywords
                   </button>
                   <ul class="dropdown-menu">
@@ -32,16 +32,16 @@
             </div>
             
             <div class="col">
-                <a class="btn btn-primary w-100" href="#" role="button">Location</a>
+                <a class="btn btn-outline-light w-100" href="#" role="button">Location</a>
             </div>
             <div class="col">
-                <a class="btn btn-primary w-100" href="#" role="button">Remote friendly</a>
+                <a class="btn btn-outline-light w-100" href="#" role="button">Remote friendly</a>
             </div>
             <div class="col">
-                    <a class="btn btn-primary active w-100" href="#" role="button">Design <i class="fa fa-check"></i></a>
+                    <a class="btn btn-outline-secondary active w-100" href="#" role="button">Design <i class="fa fa-check"></i></a>
             </div>
             <div class="col">
-                <a class="btn btn-primary w-100" href="#" role="button">Contract</a>
+                <a class="btn btn-outline-light w-100" href="#" role="button">Contract</a>
             </div>
         </div>
     </div>
