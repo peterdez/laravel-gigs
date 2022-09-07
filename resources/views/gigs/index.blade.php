@@ -4,7 +4,7 @@
 
 @section('content')
       <div class="d-flex align-items-center justify-content-between py-4 border-bottom px-5">
-        <div><h1 class="m-0 fw-bold">Gigs</h1></div>
+        <div><h1 class="h1 m-0 fw-bold">Gigs</h1></div>
         <div><a href="{{route('gigs.create')}}" class="btn btn-primary">Create Gig <i class="fa fa-plus"></i></a></div>
       </div>
       <nav class="nav nav-pills nav-pills-index nav-justified px-5">

@@ -2,9 +2,9 @@
 @extends('layout')
 @section('content')
 <div class="d-flex align-items-center justify-content-between py-4 border-bottom px-5">
-  <div><h1 class="m-0 fw-bold">Gigs</h1></div>
+  <div><h1 class="h1 m-0 fw-bold">Gigs</h1></div>
 </div>
-<h4 class="py-4 px-5">New gig</h4>
+<h4 class="h4 py-4 px-5">New gig</h4>
 <form action="{{route('gigs.update', $gig->id)}}" method="POST" id="edit_gig_form" class="row g-3">
   @csrf
   @method('PUT')

@@ -1,7 +1,17 @@
 body {
   font-size: .875rem;
+  color: #afb3be;
   background-color: #fbfbff;
 }
+
+.h1 {
+  color: #555064;
+}
+
+.h4 {
+  color: #777c90;
+}
+
 .table {
     border-collapse: separate;
     border-spacing:0 10px;
