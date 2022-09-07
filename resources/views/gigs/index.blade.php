@@ -45,12 +45,13 @@
             </div>
         </div>
     </div>
-    @if(session()->get('success'))
-    <div class="alert alert-success">
-      {{ session()->get('success') }}  
-    </div><br />
-  @endif
+    
       <div class="table-responsive px-5">
+      @if(session()->get('success'))
+        <div class="alert alert-success mb-0">
+          {{ session()->get('success') }}  
+        </div>
+      @endif
         <table class="table align-middle">
           <thead>
             <tr>
