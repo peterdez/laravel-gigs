@@ -55,6 +55,7 @@
           <thead>
             <tr>
               <th scope="col"></th>
+              <th scope="col">Title</th>
               <th scope="col">Role</th>
               <th scope="col">Company</th>
               <th scope="col">Date</th>
@@ -69,6 +70,9 @@
             <div class="form-check">
               <input class="form-check-input" type="checkbox" value="" id="">
             </div>
+            </td>
+            <td>
+              {{ $gig->title }}
             </td>
             <td>
             @isset ($gig->role->title) 
