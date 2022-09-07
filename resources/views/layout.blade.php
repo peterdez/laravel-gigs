@@ -10,152 +10,6 @@
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
   <link href="{{ asset('css/app.css') }}" rel="stylesheet" type="text/css" />
   <link href="{{ asset('css/gigs-dashboard.css') }}" rel="stylesheet" type="text/css" />
-  <style>
-        body {
-          background-color: #fbfbff;
-        }
-        .table {
-            border-collapse: separate;
-            border-spacing:0 10px;
-        }
-        th {
-          border-bottom-width: 0 !important;
-        }
-        td:first-child,
-        th:first-child {
-          border-radius: 10px 0 0 10px;
-          padding-left: 20px;
-        }
-
-        td:last-child,
-        th:last-child {
-          border-radius: 0 10px 10px 0;
-          padding-right: 20px;
-        }
-        .navbar-brand {
-            background-color: transparent !important;
-            box-shadow: none !important;
-        }
-        .sidebar {
-          padding-top: 10px !important;
-          background-color: #fcfcff;
-          z-index: 9999 !important;
-        }
-        #sidebarMenu .nav-item {
-          margin-bottom: 10px;
-        }
-        #sidebarMenu #logo {
-          max-width: 80px;
-        }
-        .top-bar .nav-link {
-          color: #555064 !important;
-        }
-        .sidebar .nav-link .feather {
-          color: #a9b0c5 !important;
-      }
-
-  
-      .sidebar .nav-link {
-        color: #a7a4ae !important;
-      }
-      .sidebar .nav-link.active, .sidebar .nav-link.active .feather {
-        color: #fbb30b !important;
-      }
-      .below-pills .btn-primary {
-          background: none;
-          border: 1px solid #cccccc;
-          color: #a9b0c5;
-      }
-      .below-pills .btn-primary.active {
-          background: none;
-          border: 1px solid #fbb30b;
-          color: #fbb30b;
-      }
-      .nav-pills-index {
-          border-bottom: 3px solid #cccccc;
-      }
-      .nav-pills-index .nav-link {
-          background-color: transparent;
-          color: #a9b0c5 !important;
-      }
-      .nav-pills-index .nav-link.active, .nav-pills-index .show>.nav-link {
-          position: relative;
-          bottom: -3px;
-          background-color: transparent;
-          color: #a7a4ae !important;
-          font-weight: bold;
-          border-bottom: 3px solid #fbb30b;
-      }
-      .nav-pills-inner .nav-link {
-        color: #a9b0c5;
-      }
-      .nav-pills-inner .nav-link.active {
-          background: none;
-          color: #fbb30b;
-      }
-        .bd-placeholder-img {
-          font-size: 1.125rem;
-          text-anchor: middle;
-          -webkit-user-select: none;
-          -moz-user-select: none;
-          user-select: none;
-        }
-  
-        @media (min-width: 768px) {
-          .bd-placeholder-img-lg {
-            font-size: 3.5rem;
-          }
-        }
-
-        @media (max-width: 767.98px) {
-            .top-search {width: 100% !important;}
-            header .navbar-nav {
-                width: 100%;
-            }
-
-            .nav-pills-inner, .tab-content {
-                width: 100% !important;
-                display: block;
-            }
-        }
-  
-        .b-example-divider {
-          height: 3rem;
-          background-color: rgba(0, 0, 0, .1);
-          border: solid rgba(0, 0, 0, .15);
-          border-width: 1px 0;
-          box-shadow: inset 0 .5em 1.5em rgba(0, 0, 0, .1), inset 0 .125em .5em rgba(0, 0, 0, .15);
-        }
-  
-        .b-example-vr {
-          flex-shrink: 0;
-          width: 1.5rem;
-          height: 100vh;
-        }
-  
-        .bi {
-          vertical-align: -.125em;
-          fill: currentColor;
-        }
-  
-        .nav-scroller {
-          position: relative;
-          z-index: 2;
-          height: 2.75rem;
-          overflow-y: hidden;
-        }
-  
-        .nav-scroller .nav {
-          display: flex;
-          flex-wrap: nowrap;
-          padding-bottom: 1rem;
-          margin-top: -1px;
-          overflow-x: auto;
-          text-align: center;
-          white-space: nowrap;
-          -webkit-overflow-scrolling: touch;
-        }
-      </style>
 </head>
 <body>
 <div class="container-fluid">
@@ -230,13 +84,13 @@
             </a>
           </li>
           <li class="nav-item">
-            <a class="nav-link active px-5 py-4" aria-current="page" href="#">
+            <a class="nav-link px-5 py-4" aria-current="page" href="#">
               <i class="fa fa-home" class="align-text-bottom"></i>
               Dashboard
             </a>
           </li>
           <li class="nav-item">
-            <a class="nav-link px-5 py-4" href="#">
+            <a class="nav-link active px-5 py-4" href="#">
               <i class="fa fa-briefcase" class="align-text-bottom"></i>
               Gigs
             </a>
@@ -259,10 +113,28 @@
     <div class="row">
     <main class="col-md-9 ms-sm-auto col-lg-10 px-md-0">
     @yield('content')
-    </div>
+      </main>
     </div>
  </div>
   <script src="{{ asset('js/app.js') }}" type="text/js"></script>
+  <script src="//ajax.googleapis.com/ajax/libs/jquery/2.1.3/jquery.min.js"></script>
+  <script>
+  $( document ).ready(function() {
+       $("#salary_min, #salary_max").keyup(function(event) {
+            var minSalary = $('#salary_min').val();
+            var maxSalary = $('#salary_max').val();
+            $('#salary').val(minSalary + "-" + maxSalary);
+        });
+
+        $("#continue_btn").click(function() {
+             $("#v-pills-remuneration-tab").trigger("click");
+        });
+
+        $("#gig_create_back").click(function() {
+             $("#v-pills-basic-tab").trigger("click");
+        });
+  });
+  </script>
   <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.0/dist/js/bootstrap.bundle.min.js" integrity="sha384-A3rJD856KowSb7dwlZdYEkO39Gagi7vIsF0jrRAoQmDKKtQBHUuLZ9AsSv4jD4Xa" crossorigin="anonymous"></script>
 </body>
 </html>

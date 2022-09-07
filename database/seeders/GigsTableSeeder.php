@@ -24,7 +24,7 @@ class GigsTableSeeder extends Seeder
             Gig::create([
                 'title' => $faker->word,
                 'description' => $faker->sentence,
-                'salary' => $faker->numberBetween(50, 500),
+                'salary' => $faker->numerify('###-###'),
                 'company_id' => $faker->randomDigitNotNull,
                 'role_id' => $faker->randomDigitNotNull,
                 'user_id' => $faker->randomDigitNotNull,

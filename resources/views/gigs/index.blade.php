@@ -9,8 +9,8 @@
       </div>
       <nav class="nav nav-pills nav-pills-index nav-justified px-5">
         <a class="nav-link active rounded-0 text-start ps-0" aria-current="page" href="#">All Gigs <span class="badge bg-secondary">{{$gig_count}}</span></a>
-        <a class="nav-link rounded-0" href="#">My Gigs <span class="badge bg-secondary">32</span></a>
-        <a class="nav-link rounded-0" href="#">Rejected Gigs <span class="badge bg-secondary">25</span></a>
+        <a class="nav-link rounded-0" href="#">My Gigs <span class="badge bg-secondary-b">32</span></a>
+        <a class="nav-link rounded-0" href="#">Rejected Gigs <span class="badge bg-secondary-b">25</span></a>
       </nav>
 
     <div class="pb-3 pt-4 below-pills px-5">
@@ -19,7 +19,6 @@
                 <a class="btn btn-primary w-100" href="#" role="button">Freelance</a>
             </div>
             <div class="col">
-                <!--a class="btn btn-primary w-100" href="#" role="button">Keywords</a-->
                 <div class="dropdown">
                   <button class="btn btn-primary dropdown-toggle w-100" type="button" data-bs-toggle="dropdown" aria-expanded="false">
                     Keywords
@@ -39,7 +38,7 @@
                 <a class="btn btn-primary w-100" href="#" role="button">Remote friendly</a>
             </div>
             <div class="col">
-                    <a class="btn btn-primary active w-100" href="#" role="button">Design</a>
+                    <a class="btn btn-primary active w-100" href="#" role="button">Design <i class="fa fa-check"></i></a>
             </div>
             <div class="col">
                 <a class="btn btn-primary w-100" href="#" role="button">Contract</a>
@@ -60,7 +59,6 @@
               <th scope="col">Company</th>
               <th scope="col">Date</th>
               <th scope="col">Salary</th>
-              <th scope="col"></th>
               <th colspan="2"></th>
             </tr>
           </thead>
@@ -69,7 +67,7 @@
         <tr class="bg-white rounded mb-2">
             <td>
             <div class="form-check">
-              <input class="form-check-input" type="checkbox" value="" id="flexCheckDefault">
+              <input class="form-check-input" type="checkbox" value="" id="">
             </div>
             </td>
             <td>
@@ -84,13 +82,15 @@
             </td>
             <td>{{$gig->created_at_formatted}}</td>
             <td>{{$gig->salary}}</td>
-            <td><a href="{{ route('gigs.edit', $gig->id)}}" class="btn btn-primary">Edit</a></td>
             <td>
-                <form action="{{ route('gigs.destroy', $gig->id)}}" method="post">
+              <div class="d-grid gap-2 d-md-block">
+              <a href="{{ route('gigs.edit', $gig->id)}}" type="button" class="btn btn-primary">Edit</a>
+              <form action="{{ route('gigs.destroy', $gig->id)}}" method="post" class="d-inline">
                   @csrf
                   @method('DELETE')
-                  <button class="btn btn-danger" type="submit">Delete</button>
+                  <button class="btn btn-secondary-b" type="submit">Delete</button>
                 </form>
+              </div>
             </td>
         </tr>
         @endforeach

@@ -24,13 +24,24 @@ class UsersTableSeeder extends Seeder
         // let's hash it before the loop, or else our seeder 
         // will be too slow.
         $password = Hash::make('Krystal');
-
-        User::create([
+        $admins = array(
+            array(
             'name' => 'Administrator',
             'email' => 'admin@test.com',
             'password' => $password,
             'is_admin' => 1,
-        ]);
+        ), 
+        array(
+            'name' => 'KrystalUser',
+            'email' => 'krystal@test.com',
+            'password' => $password,
+            'is_admin' => 0,
+        )
+        );
+
+        foreach ($admins as $admin) {
+            User::create($admin);
+        }
 
         // And now let's generate a few dozen users for our app:
         for ($i = 0; $i < 10; $i++) {

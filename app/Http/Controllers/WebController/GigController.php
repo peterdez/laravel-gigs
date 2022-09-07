@@ -104,7 +104,8 @@ class GigController extends Controller
         $user_id = Auth::id();
         }
         $companies = Company::all();
-        return view('gigs.edit',compact('gig', 'user_id', 'companies'));
+        $roles = Role::all();
+        return view('gigs.edit',compact('gig', 'user_id', 'companies', 'roles'));
     }
 
     /**
