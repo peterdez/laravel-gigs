@@ -5,7 +5,7 @@
   <div><h1 class="m-0 fw-bold">Gigs</h1></div>
 </div>
 <h4 class="py-4 px-5">New gig</h4>
-<form action="{{route('gigs.store')}}" method="POST" class="row g-3">
+<form action="{{route('gigs.store')}}" method="POST" id="add_gig_form" class="row g-3">
   @csrf
   <div class="d-md-flex align-items-start px-3">
     <div class="nav flex-column nav-pills nav-pills-inner p-4 mb-2 mx-5 w-25 bg-white shadow rounded" id="v-pills-tab" role="tablist" aria-orientation="vertical">
@@ -76,8 +76,13 @@
           </div>
 
           <div class="col-md-12">
-          <label for="country" class="form-label">Add tags</label>
-          <input type="text" class="form-control" placeholder="" aria-label="tags">
+          <label for="tags" class="form-label">Add tags</label>
+          <input type="text" class="form-control" data-role="tagsinput" placeholder="" aria-label="tags">
+          <p class="text-muted mt-2">Suggested tags: 
+            <span class="text-decoration-underline">full time</span> 
+          <span class="text-decoration-underline">contract</span>  
+          <span class="text-decoration-underline">freelance</span>
+           </p>
           </div>
 
           <div class="col-md-12">

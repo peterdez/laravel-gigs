@@ -10,6 +10,7 @@
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
   <link href="{{ asset('css/app.css') }}" rel="stylesheet" type="text/css" />
   <link href="{{ asset('css/gigs-dashboard.css') }}" rel="stylesheet" type="text/css" />
+  <link href="https://cdnjs.cloudflare.com/ajax/libs/bootstrap-tagsinput/0.8.0/bootstrap-tagsinput.css" rel="stylesheet"/>
 </head>
 <body>
 <div class="container-fluid">
@@ -121,6 +122,7 @@
  </div>
   <script src="{{ asset('js/app.js') }}" type="text/js"></script>
   <script src="//ajax.googleapis.com/ajax/libs/jquery/2.1.3/jquery.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/bootstrap-tagsinput/0.8.0/bootstrap-tagsinput.min.js"></script>
   <script>
   $( document ).ready(function() {
        $("#salary_min, #salary_max").keyup(function(event) {
@@ -136,6 +138,28 @@
         $("#gig_create_back").click(function() {
              $("#v-pills-basic-tab").trigger("click");
         });
+
+        $('input')
+        .on('change', function (event) {
+          var $element = $(event.target);
+          var $container = $element.closest('.example');
+
+          if (!$element.data('tagsinput')) return;
+
+          var val = $element.val();
+          if (val === null) val = 'null';
+          var items = $element.tagsinput('items');
+
+          $('code', $('pre.val', $container)).html(
+            $.isArray(val)
+              ? JSON.stringify(val)
+              : '"' + val.replace('"', '\\"') + '"'
+          );
+          $('code', $('pre.items', $container)).html(
+            JSON.stringify($element.tagsinput('items'))
+          );
+        })
+        .trigger('change');
   });
   </script>
   <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.0/dist/js/bootstrap.bundle.min.js" integrity="sha384-A3rJD856KowSb7dwlZdYEkO39Gagi7vIsF0jrRAoQmDKKtQBHUuLZ9AsSv4jD4Xa" crossorigin="anonymous"></script>
