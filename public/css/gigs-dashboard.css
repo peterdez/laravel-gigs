@@ -37,6 +37,10 @@ th:last-child {
     background-color: transparent !important;
     box-shadow: none !important;
 }
+header .navbar-nav .dropdown-menu {
+  position: absolute;
+  left: -100%;
+}
 .sidebar {
   padding-top: 10px !important;
   background-color: #fcfcff;

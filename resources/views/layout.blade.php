@@ -62,11 +62,26 @@
             <i class="fa fa-envelope-o" class="align-text-bottom"></i>
           </a>
           </li>
-          <li class="nav-item">
-            <a class="nav-link p-0 my-2 mx-4" href="#">
+
+          <li class="nav-item dropdown">
+          <a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">
             <i class="fa fa-cog" class="align-text-bottom"></i>
           </a>
-          </li>  
+          <ul class="dropdown-menu">
+          @guest
+            <li><a class="dropdown-item" href="#">Guest</a></li>
+          @else
+            <li><a class="dropdown-item" href="#">{{ Auth::user()->name }}:
+            @if (Auth::user()->is_admin)
+            Admin
+            @else
+            User
+            @endif
+            </a></li>
+          @endguest
+          </ul>
+           </li>
+            
           
           <li class="nav-item">
             <a class="nav-link p-0 my-2 mx-4" href="#">
