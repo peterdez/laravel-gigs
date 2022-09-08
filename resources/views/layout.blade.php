@@ -24,7 +24,7 @@
         <span class="navbar-toggler-icon"></span>
       </button>
       <div class="input-group w-50 top-search">
-        <span class="input-group-text" id="basic-addon1"><i class="fa fa-search"></i></span>
+        <span class="input-group-text pe-0" id="basic-addon1"><i class="fa fa-search"></i></span>
         <input type="text" class="form-control" placeholder="Search" aria-label="Username" aria-describedby="search">
       </div>
       <div class="navbar-nav pt-4 pt-md-0">

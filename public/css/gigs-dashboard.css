@@ -302,9 +302,14 @@ border: 3px solid #ffffff;
     border-left: 0;
   }
 
+  .top-search .form-control:focus {
+    box-shadow: none;
+    border-color: #ced4da;
+  }
+
   .top-search .input-group-text {
     background-color: transparent;
-    padding-right: 0;
+    /*padding-right: 0; */
     border-right: 0;
   }
   
