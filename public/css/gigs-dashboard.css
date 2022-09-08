@@ -119,7 +119,7 @@ color: #fbb30b !important;
 ul.gig-line {
   list-style-type: none;
   position: relative;
-  padding-left: 0;
+  padding-left: 3px;
 }
 ul.gig-line:before {
   content: ' ';
@@ -149,8 +149,8 @@ ul.gig-line > li:before {
   position: absolute;
   border-radius: 50%;
   border: 3px solid #fbb30b;
-  outline: 6px solid #ffffff;
-  left: -5px;
+  outline: 10px solid #ffffff;
+  left: -4px;
   width: 10px;
   height: 10px;
   z-index: 400;
