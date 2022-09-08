@@ -15,8 +15,6 @@ class Gig extends Model
         'salary',
         'company_id',
         'role_id',
-        /*'user_id',
-        'created_at'*/
     ];
 
     /**

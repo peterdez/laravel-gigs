@@ -8,8 +8,8 @@
         <div><a href="{{route('gigs.create')}}" class="btn btn-primary">Create Gig <i class="fa fa-plus"></i></a></div>
       </div>
       <nav class="nav nav-pills nav-pills-index nav-justified px-5">
-        <a class="nav-link active rounded-0 text-start ps-0" aria-current="page" href="#">All Gigs <span class="badge bg-secondary">{{$gig_count}}</span></a>
-        <a class="nav-link rounded-0" href="#">My Gigs <span class="badge bg-secondary-b">32</span></a>
+        <a class="nav-link rounded-0 text-start ps-0 {{ request()->is('gigs') ? 'active' : ''}}" aria-current="page" href="/gigs">All Gigs <span class="badge bg-secondary">{{$gig_count}}</span></a>
+        <a class="nav-link rounded-0 {{ request()->is('gigs/my-gigs') ? 'active' : ''}}" href="/gigs/my-gigs">My Gigs <span class="badge bg-secondary-b">32</span></a>
         <a class="nav-link rounded-0" href="#">Rejected Gigs <span class="badge bg-secondary-b">25</span></a>
       </nav>
 

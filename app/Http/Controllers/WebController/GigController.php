@@ -35,6 +35,15 @@ class GigController extends Controller
         
     }
 
+    public function GetMyGigs()
+    {
+        $user_id = Auth::id();
+        $gigs = Gig::where('user_id', $user_id)->paginate(5);
+        $gig_count = Gig::count();
+        return view('gigs.index', compact('gigs', 'gig_count'))
+            ->with('i', (request()->input('page', 1) - 1) * 5);
+    }
+
     /*public function indexcat($cat)
     {
         $gigs = Gig::where('title', $cat)->paginate(5);
@@ -71,10 +80,16 @@ class GigController extends Controller
             'salary' => 'required',
             'company_id' => 'required',
             'role_id' => 'required',
-            'user_id' => 'required',
         ]);
-
-        Gig::create($request->all());
+        
+        $gig = new Gig;
+        $gig->title = $request->title;
+        $gig->description = $request->description;
+        $gig->salary = $request->salary;
+        $gig->company_id = $request->company_id;
+        $gig->role_id = $request->role_id;
+        $gig->user_id = Auth::id();
+        $gig->save();
 
         return redirect()->route('gigs.index')
             ->with('success', 'Gig created successfully.');
@@ -125,9 +140,8 @@ class GigController extends Controller
             'salary' => 'required',
             'company_id' => 'required',
             'role_id' => 'required',
-            'user_id' => 'required',
         ]);
- 
+
         $gig->update($request->all());
      
         return redirect()->route('gigs.index')

@@ -19,6 +19,9 @@ Route::get('/', function () {
     return view('welcome');
 });
 
+
+Route::get('gigs/my-gigs', [GigController::class, 'GetMyGigs']);
+
 Route::resource('gigs', GigController::class);
 
 Auth::routes();

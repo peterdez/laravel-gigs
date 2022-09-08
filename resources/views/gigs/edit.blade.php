@@ -32,7 +32,6 @@
     </div>
     @endif
     <div class="tab-content w-50  bg-white shadow-lg rounded p-4" id="v-pills-tabContent">
-      <input type="hidden" name="user_id" class="form-control" id="exampleFormCut1" placeholder="user id" value={{$user_id}}>
       <div class="tab-pane fade show active" id="v-pills-basic" role="tabpanel" aria-labelledby="v-pills-basic-tab" tabindex="0">
        <div class="row g-3">
 
@@ -48,7 +47,7 @@
 
           <div class="col-md-6">
             <label for="role_id" class="form-label">Role</label>
-            <select class="form-select" name="company_id" aria-label="Default select example">
+            <select class="form-select" name="role_id" aria-label="Default select example">
                 @foreach($roles as $role)
         
                 <option value="{{$role->id}}" {{ ($gig->role_id == $role->id) ? 'selected' : ''; }}>{{$role->title}}</option>

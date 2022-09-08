@@ -31,7 +31,7 @@
     </div>
     @endif
     <div class="tab-content w-50  bg-white shadow-lg rounded p-4" id="v-pills-tabContent">
-      <input type="hidden" name="user_id" class="form-control" id="exampleFormCut1" placeholder="user id" value={{$user_id}}>
+      <input type="hidden" name="user_id" class="form-control" id="" placeholder="user id" value={{$user_id}}>
       <div class="tab-pane fade show active" id="v-pills-basic" role="tabpanel" aria-labelledby="v-pills-basic-tab" tabindex="0">
        <div class="row g-3">
 
