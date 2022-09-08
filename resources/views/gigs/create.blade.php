@@ -11,7 +11,7 @@
     <div class="nav flex-column nav-pills nav-pills-inner px-4 py-2 pt-md-2 pb-md-4 mb-2 mx-md-4 w-25 bg-white shadow-lg rounded" id="v-pills-tab" role="tablist" aria-orientation="vertical">
     <div class="col-md-12">  
     <ul class="gig-line mb-0">
-				<li>
+				<li class="mt-4">
 					<button type="button" href="#" id="v-pills-basic-tab" data-bs-toggle="pill" data-bs-target="#v-pills-basic" 
           role="tab" aria-controls="v-pills-basic" aria-selected="true" class="nav-link active text-start p-0">Basic Data</button>
 					
