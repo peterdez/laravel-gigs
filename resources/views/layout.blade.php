@@ -90,7 +90,7 @@
           
           <li class="nav-item">
             <a class="nav-link p-0 my-2 mx-4" href="#">
-            <img class="img-profile rounded-circle" src="{{ asset('img/profile-pic.jpg') }}" width="25">
+            <img class="img-profile rounded" src="{{ asset('img/profile-pic.jpg') }}" width="25">
           </a>
           </li>
         </ul>
