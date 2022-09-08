@@ -98,12 +98,12 @@
      </header>
     </div>
   </div>
-  
+  <div class="row">
     <nav id="sidebarMenu" class="col-md-3 col-lg-2 d-md-block sidebar collapse">
       <div class="position-sticky pt-3">
         <ul class="nav flex-column">
           <li class="nav-item">
-            <a class="sidebar-brand nav-link px-5 py-4" href="{{ url('gigs') }}">
+            <a class="sidebar-brand d-none d-md-block nav-link px-5 py-4" href="{{ url('gigs') }}">
               <img id="logo" src="{{ asset('img/logo.png') }}">
             </a>
           </li>
@@ -134,6 +134,7 @@
         </ul>
       </div>
     </nav>
+  </div>
     <div class="row">
     <main class="col-md-9 ms-sm-auto col-lg-10 px-md-0">
     @yield('content')

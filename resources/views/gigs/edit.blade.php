@@ -9,7 +9,7 @@
   @csrf
   @method('PUT')
   <div class="d-md-flex align-items-start px-3">
-    <div class="nav flex-column nav-pills nav-pills-inner p-4 mb-2 mx-md-5 w-25 bg-white shadow-lg rounded" id="v-pills-tab" role="tablist" aria-orientation="vertical">
+    <div class="nav flex-column nav-pills nav-pills-inner px-4 py-2 pt-md-2 pb-md-4 mb-2 mx-md-5 w-25 bg-white shadow-lg rounded" id="v-pills-tab" role="tablist" aria-orientation="vertical">
     <div class="col-md-12">  
     <ul class="gig-line mb-0">
 				<li>
