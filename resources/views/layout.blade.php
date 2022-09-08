@@ -114,7 +114,7 @@
             </a>
           </li>
           <li class="nav-item">
-            <a class="nav-link active px-5 py-4" href="#">
+            <a class="nav-link active px-5 py-4" href="/gigs">
               <i class="fa fa-briefcase" class="align-text-bottom"></i>
               Gigs
             </a>
