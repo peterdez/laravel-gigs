@@ -21,3 +21,13 @@ Web application for managing gigs built with Laravel:
 8. Run server
 - php artisan serve
 9. Visit **localhost:8000/gigs** in your favorite browser
+
+## Test User Accounts
+
+1. Administrator
+- Email Address: admin@test.com
+- Password: Krystal
+
+2. General User
+- Email Address: krystal@test.com
+- Password: Krystal
