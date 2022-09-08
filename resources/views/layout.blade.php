@@ -136,7 +136,7 @@
     </nav>
   </div>
     <div class="row">
-    <main class="col-md-9 ms-sm-auto col-lg-10 px-md-0">
+    <main class="col-md-9 ms-sm-auto col-lg-10 px-0">
     @yield('content')
       </main>
     </div>
