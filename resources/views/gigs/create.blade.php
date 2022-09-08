@@ -5,12 +5,25 @@
   <div><h1 class="h1 m-0 fw-bold">Gigs</h1></div>
 </div>
 <h4 class="h4 py-4 px-5">New gig</h4>
-<form action="{{route('gigs.store')}}" method="POST" id="add_gig_form" class="g-3 mb-5">
+<form action="{{route('gigs.store')}}" method="POST" id="add_gig_form" class="gig-form g-3 mb-5">
   @csrf
   <div class="d-md-flex align-items-start px-3">
-    <div class="nav flex-column nav-pills nav-pills-inner p-4 mb-2 mx-md-5 w-25 bg-white shadow-lg rounded" id="v-pills-tab" role="tablist" aria-orientation="vertical">
-      <button class="nav-link active text-start" id="v-pills-basic-tab" data-bs-toggle="pill" data-bs-target="#v-pills-basic" type="button" role="tab" aria-controls="v-pills-basic" aria-selected="true">Basic Data</button>
-      <button class="nav-link text-start" id="v-pills-remuneration-tab" data-bs-toggle="pill" data-bs-target="#v-pills-remuneration" type="button" role="tab" aria-controls="v-pills-remuneration" aria-selected="false">Remuneration</button>
+    <div class="row nav flex-column nav-pills nav-pills-inner p-4 mb-2 mx-md-5 w-25 bg-white shadow-lg rounded" id="v-pills-tab" role="tablist" aria-orientation="vertical">
+    <div class="col-md-12">  
+    <ul class="gig-line mb-0">
+				<li>
+					<button type="button" href="#" id="v-pills-basic-tab" data-bs-toggle="pill" data-bs-target="#v-pills-basic" 
+          role="tab" aria-controls="v-pills-basic" aria-selected="true" class="nav-link active text-start p-0">Basic Data</button>
+					
+				</li>
+
+				<li>
+					<button type="button" href="#" id="v-pills-remuneration-tab"  data-bs-toggle="pill" data-bs-target="#v-pills-remuneration" 
+          role="tab" aria-controls="v-pills-remuneration" aria-selected="false" class="nav-link text-start p-0">Remuneration</button>
+					
+				</li>
+			</ul>
+    </div>
     </div>
     @if(session('status'))
     <div class="alert alert-success mb-1 mt-1">
@@ -87,7 +100,7 @@
 
           <div class="col-md-12">
           <div class="float-end">
-          <a href="{{ route('gigs.index') }}" type="button" class="btn">Cancel</a>
+          <a href="{{ route('gigs.index') }}" type="button" class="btn btn-link">Cancel</a>
           <button class="btn btn-primary" id="continue_btn" type="button">Continue</button>
           </div>
           </div>
@@ -113,7 +126,7 @@
           </div>
           <div class="col-md-12">
             <div class="float-end">
-            <button class="btn" id="gig_create_back" type="button">Back</button>
+            <button class="btn btn-link" id="gig_create_back" type="button">Back</button>
             <button type="submit" class="btn btn-primary">Add Gig</button>
             </div>
           </div>

@@ -145,7 +145,14 @@
   <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.0/dist/js/bootstrap.bundle.min.js" integrity="sha384-A3rJD856KowSb7dwlZdYEkO39Gagi7vIsF0jrRAoQmDKKtQBHUuLZ9AsSv4jD4Xa" crossorigin="anonymous"></script>
   <script src="https://cdnjs.cloudflare.com/ajax/libs/bootstrap-tagsinput/0.8.0/bootstrap-tagsinput.min.js"></script>
   <script>
+  function addActivatedLi() {
+      $("ul.gig-line li").removeClass("activated");
+      $('ul.gig-line button.active').parent().addClass("activated");
+    } 
+  </script>
+  <script>
   $( document ).ready(function() {
+    addActivatedLi();
        $("#salary_min, #salary_max").keyup(function(event) {
             var minSalary = $('#salary_min').val();
             var maxSalary = $('#salary_max').val();
@@ -154,10 +161,12 @@
 
         $("#continue_btn").click(function() {
              $("#v-pills-remuneration-tab").trigger("click");
+             addActivatedLi();
         });
 
         $("#gig_create_back").click(function() {
              $("#v-pills-basic-tab").trigger("click");
+             addActivatedLi();
         });
 
         $('input')
@@ -181,6 +190,13 @@
           );
         })
         .trigger('change');
+ 
+        $('ul.gig-line button.active').parent().addClass("activated");
+
+        $("ul.gig-line button").click(function(){
+          addActivatedLi();
+        });
+        
   });
   </script>
 </body>

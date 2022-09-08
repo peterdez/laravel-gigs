@@ -108,12 +108,59 @@ color: #fbb30b !important;
   border-bottom: 3px solid #fbb30b;
 }
 .nav-pills-inner .nav-link {
-color: #a9b0c5;
-}
-.nav-pills-inner .nav-link.active {
-  background: none;
   color: #fbb30b;
 }
+.nav-pills-inner .nav-link.active {
+  background: none !important;
+  color: #a9b0c5 !important;
+}
+
+/***** Gig Line  ****/
+ul.gig-line {
+  list-style-type: none;
+  position: relative;
+  padding-left: 0;
+}
+ul.gig-line:before {
+  content: ' ';
+  background: #d4d9df;
+  display: inline-block;
+  position: absolute;
+  left: 0;
+  width: 1px;
+  height: 80%;
+  z-index: 400;
+}
+ul.gig-line > li button {
+line-height: 10px;
+}
+ul.gig-line > li button.active {
+cursor: default;
+pointer-events: none;
+}
+ul.gig-line > li {
+  margin: 30px 0;
+  padding-left: 15px;
+}
+ul.gig-line > li:before {
+  content: ' ';
+  background: white;
+  display: inline-block;
+  position: absolute;
+  border-radius: 50%;
+  border: 3px solid #fbb30b;
+  outline: 6px solid #ffffff;
+  left: -5px;
+  width: 10px;
+  height: 10px;
+  z-index: 400;
+}
+
+ul.gig-line > li.activated:before {
+border: 3px solid #ffffff;
+}
+/*********/
+
 .bd-placeholder-img {
   font-size: 1.125rem;
   text-anchor: middle;
@@ -175,6 +222,18 @@ color: #a9b0c5;
   text-align: center;
   white-space: nowrap;
   -webkit-overflow-scrolling: touch;
+}
+
+.gig-form .btn-link{
+  color: #555064;
+  font-weight: bold;
+  text-decoration: none;
+}
+.gig-form .btn-link:hover, .gig-form .btn-link:focus, .gig-form .btn-link:active {
+  color: #555064;
+  background: none;
+  border: none;
+  box-shadow: none;
 }
 
   .btn-primary {
