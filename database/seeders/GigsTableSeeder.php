@@ -28,6 +28,8 @@ class GigsTableSeeder extends Seeder
                 'company_id' => $faker->randomDigitNotNull,
                 'role_id' => $faker->randomDigitNotNull,
                 'user_id' => $faker->randomDigitNotNull,
+                'created_at' => $faker->dateTime,
+                'updated_at' => $faker->dateTime,
             ]);
         }
     }
